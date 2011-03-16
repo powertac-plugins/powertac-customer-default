@@ -1,5 +1,5 @@
 /*
- * Copyright 2009-2010 the original author or authors.
+ * Copyright 2011 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,32 +17,14 @@
 package org.powertac.customer
 
 import org.powertac.common.interfaces.Customer
-import org.powertac.common.command.TariffDoReplyCmd
-import org.powertac.common.command.TariffDoPublishCmd
-import org.powertac.common.Weather
-import org.powertac.common.MeterReading
+import org.powertac.common.CustomerInfo
 
 class CustomerService implements Customer {
 
   static transactional = true
 
-
-  List<TariffDoReplyCmd> processTariffList(List<TariffDoPublishCmd> tariffDoPublishCmdList) {
-    log.info "processTariffList ${tariffDoPublishCmdList}"
-    return []
-  }
-
-  void processWeatherForecasts(List<Weather> weatherList) {
-    log.info "processWeatherForecasts ${weatherList}"
-  }
-
-  MeterReading generateMeterReading(Weather weather) {
-    log.info "generateMeterReading ${weather}"
-    return new MeterReading()
-  }
-
-  Customer generateCustomerInfo() {
+  CustomerInfo generateCustomerInfo() {
     log.info "generateCustomerInfo"
-    return new org.powertac.common.Customer()
+    return new org.powertac.common.CustomerInfo()
   }
 }
