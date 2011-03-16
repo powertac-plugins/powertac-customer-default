@@ -23,8 +23,7 @@ class CustomerService implements Customer {
 
   static transactional = true
 
-  CustomerInfo generateCustomerInfo() {
-    log.info "generateCustomerInfo"
-    return new org.powertac.common.CustomerInfo()
+  public Customer generateCustomerInfo(){
+    return
   }
 }
